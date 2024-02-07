@@ -1,0 +1,8 @@
+spring:
+  devtools:
+    livereload:
+      enabled: false
+
+  docker:
+    compose:
+      enabled: false
