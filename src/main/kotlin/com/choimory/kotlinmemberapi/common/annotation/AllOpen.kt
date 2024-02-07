@@ -1,3 +1,4 @@
 package com.choimory.kotlinmemberapi.common.annotation
-
-annotation class AllOpen()
+@Target(AnnotationTarget.CLASS)
+@Retention(AnnotationRetention.RUNTIME)
+annotation class AllOpen
