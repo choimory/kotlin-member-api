@@ -12,23 +12,23 @@ class MemberAuthority(
     @OneToOne
     @JoinColumn(name = "member_id")
     val member: Member? = null, //회원정보
-    level: Level, //권한
+    auth: Auth, //권한
 ) : CommonDateTimeAt(
     createdAt = LocalDateTime.now(),
     modifiedAt = null,
     deletedAt = null,
 ) {
     //회원권한 enum
-    enum class Level {
+    enum class Auth {
         ADMIN, MEMBER
     }
 
     //var 세터 캡슐화
-    var level: Level = level
+    var auth: Auth = auth
         protected set
 
     //회원권한 변경
-    fun changeAuth(changeLevel: Level) {
-        this.level = changeLevel
+    fun changeAuth(changeAuth: Auth) {
+        this.auth = changeAuth
     }
 }

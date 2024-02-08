@@ -40,7 +40,7 @@ class Member(
     }
 
     //회원권한 변경
-    fun changeAuth(changeAuth: MemberAuthority.Level) {
+    fun changeAuth(changeAuth: MemberAuthority.Auth) {
         this.memberAuthority.changeAuth(changeAuth)
     }
 }
