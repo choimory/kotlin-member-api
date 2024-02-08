@@ -13,7 +13,7 @@ class MemberController(
 ) {
     @GetMapping("/{id}")
     fun find(@PathVariable id: Long): ResponseMemberFind {
-        return ResponseMemberFind(id)
+        return memberService.find(id)
     }
 
     @PostMapping
