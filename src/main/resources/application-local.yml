@@ -3,6 +3,10 @@ spring:
     activate:
       on-profile: local
 
+  devtools:
+    livereload:
+      enabled: false
+
   docker:
     compose:
       enabled: true
