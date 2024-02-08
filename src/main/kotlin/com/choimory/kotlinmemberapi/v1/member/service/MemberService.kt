@@ -1,6 +1,7 @@
 package com.choimory.kotlinmemberapi.v1.member.service
 
 import com.choimory.kotlinmemberapi.common.exception.CommonException
+import com.choimory.kotlinmemberapi.v1.member.domain.dto.MemberDto
 import com.choimory.kotlinmemberapi.v1.member.domain.entity.Member
 import com.choimory.kotlinmemberapi.v1.member.domain.response.ResponseMemberFind
 import com.choimory.kotlinmemberapi.v1.member.repository.MemberRepository
@@ -24,6 +25,6 @@ class MemberService(
                 )
             }
 
-        return ResponseMemberFind(member.id, member.nickname)
+        return ResponseMemberFind(MemberDto.toDto(member))
     }
 }
