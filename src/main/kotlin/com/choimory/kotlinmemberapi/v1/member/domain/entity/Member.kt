@@ -31,7 +31,7 @@ class Member(
         protected set
 
     @OneToMany(mappedBy = "member")
-    var memberImage: MutableList<MemberImage>? = mutableListOf()
+    var memberImages: MutableList<MemberImage>? = memberImages
         protected set
 
     //비밀번호 변경

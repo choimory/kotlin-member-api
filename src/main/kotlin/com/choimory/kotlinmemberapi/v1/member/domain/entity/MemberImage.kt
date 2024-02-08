@@ -10,6 +10,7 @@ class MemberImage(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long,
     member: Member,
+    @Enumerated(EnumType.STRING)
     val type: Type,
     val originalFileName: String,
     val fileName: String,
@@ -17,7 +18,7 @@ class MemberImage(
     val fileSize: Long,
     val thumbnailFileName: String,
     val thumbnailFilePath: String,
-    val thumbnailFileSize: String,
+    val thumbnailFileSize: Long,
 ) : CommonDateTimeAt(
     createdAt = LocalDateTime.now(),
     modifiedAt = null,
