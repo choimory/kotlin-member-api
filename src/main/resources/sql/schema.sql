@@ -35,7 +35,7 @@ create or replace table member_authority(
 ) collate utf8mb4_bin;
 
 /*회원 사진*/
-create or replace  table member_image(
+create or replace table member_image(
     id bigint not null auto_increment primary key,
     member_id bigint not null,
     type varchar(255) not null,
@@ -45,5 +45,8 @@ create or replace  table member_image(
     file_size bigint,
     thumbnail_file_name text,
     thumbnail_file_path text,
-    thumbnail_file_size bigint
+    thumbnail_file_size bigint,
+    created_at datetime not null,
+    modified_at datetime,
+    deleted_at datetime
 ) collate utf8mb4_bin;
