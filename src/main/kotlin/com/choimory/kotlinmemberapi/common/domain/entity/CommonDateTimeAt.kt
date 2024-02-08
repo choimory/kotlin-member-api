@@ -12,10 +12,14 @@ import java.time.LocalDateTime
 @EntityListeners(AuditingEntityListener::class)
 abstract class CommonDateTimeAt(
     @CreatedDate
-    protected var createdAt:LocalDateTime = LocalDateTime.now(),
-
+    val createdAt: LocalDateTime = LocalDateTime.now(),
+    modifiedAt: LocalDateTime?,
+    deletedAt: LocalDateTime?,
+) : Serializable {
     @LastModifiedDate
-    protected var modifiedAt:LocalDateTime? = null,
+    var modifiedAt: LocalDateTime? = modifiedAt
+        protected set
+    var deletedAt: LocalDateTime? = modifiedAt
+        protected set
 
-    protected var deletedAt:LocalDateTime? = null,
-) :Serializable
+}
