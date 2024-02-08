@@ -24,6 +24,7 @@ class MemberAuthority(
     }
 
     //var 세터 캡슐화
+    @Enumerated(EnumType.STRING)
     var auth: Auth = auth
         protected set
 
