@@ -1,0 +1,10 @@
+spring:
+  config:
+    activate:
+      on-profile: sql-init
+
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath*:/sql/schema.sql
+      #data-locations: classpath*:/sql/data.sql
