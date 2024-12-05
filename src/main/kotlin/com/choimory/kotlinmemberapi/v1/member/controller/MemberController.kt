@@ -23,17 +23,19 @@ class MemberController(
     //목록조회
     @GetMapping
     fun findAll() {
-
+        return memberService.findAll()
     }
 
     //회원가입
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    fun join(): ResponseMemberJoin = ResponseMemberJoin()
+    fun join(): ResponseMemberJoin {
+        return memberService.join()
+    }
 
     //로그인
     @PostMapping("/login")
     fun login() {
-
+        return memberService.login()
     }
 }
